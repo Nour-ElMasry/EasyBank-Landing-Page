@@ -1,0 +1,76 @@
+.intro {
+    background-color: $veryLightGray;
+    .container {
+        @include breakpoint-up(large) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__pics {
+        position: relative;
+        background: url("./images/bg-intro-mobile.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;
+        @include breakpoint-up(large) {
+            flex: 3;
+            order: 2;
+            background: none;
+            min-height: 41rem;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -11%;
+                left: 5%;
+                width: 170%;
+                height: 170%;
+                background: url("./images/bg-intro-desktop.svg");
+                background-size: 110%;
+                background-repeat: no-repeat;
+                background-position: bottom center;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("./images/image-mockups.png");
+            background-size: 93%;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            @include breakpoint-up(large) {
+                width: 130%;
+                height: 130%;
+                top: -10%;
+                left: 20%;
+            }
+        }
+    }
+    &__txt {
+        text-align: center;
+        h1 {
+            color: $darkBlue;
+            font-size: 2.5rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        p {
+            padding-bottom: 20px;
+            line-height: 1.5;
+        }
+        .button {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        @include breakpoint-up(large) {
+            flex: 2;
+            order: 1;
+            text-align: left;
+            h1 {
+                font-size: $font-xlg;
+            }
+        }
+    }
+}

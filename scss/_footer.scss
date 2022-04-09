@@ -1,0 +1,63 @@
+.footer {
+    background-color: $darkBlue;
+    padding: 3rem 0;
+    text-align: center;
+    @include breakpoint-up(medium) {
+        text-align: left;
+    }
+    &__grid {
+        @include breakpoint-up(medium) {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            grid-template-columns: 2fr repeat(2, 1fr) 2fr;
+        }
+    }
+    &__item {
+        @include breakpoint-up(medium) {
+            flex: 1;
+        }
+    }
+    &__socials {
+        margin-bottom: 2rem;
+        .brand {
+            margin-bottom: 2rem;
+        }
+        .socials {
+            a {
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+                svg path {
+                    transition: fill 200ms ease-in-out;
+                }
+                &:hover svg path {
+                    fill: $limeGreen;
+                }
+            }
+        }
+    }
+    &__links {
+        a {
+            display: block;
+            font-size: $font-md;
+            color: $white;
+            transition: color 200ms ease-in-out;
+            padding-bottom: 1rem;
+            &:hover {
+                color: $limeGreen;
+            }
+        }
+    }
+    &__cta {
+        text-align: right;
+        @include breakpoint-down(small) {
+            margin-top: 2rem;
+            text-align: center;
+            button {
+                padding: 1.25rem 3rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

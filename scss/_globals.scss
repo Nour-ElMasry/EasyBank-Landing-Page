@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-size: $font-md;
+    color: $grayishBlue;
+    overflow-x: hidden;
+    @include breakpoint-up(large) {
+        font-size: $font-md;
+    }
+}
+
+.container {
+    max-width: 69.375rem;
+    margin: 0 auto;
+    &--pa {
+        padding: 4.375rem 1.5rem;
+        @include breakpoint-up(large) {
+            padding: 6rem 1.5rem;
+        }
+    }
+    &--py {
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+    &--px {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.flex {
+    display: flex;
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0px;
+    font-weight: 300;
+    color: $darkBlue;
+}
+
+h2 {
+    font-size: 1.875rem;
+    @include breakpoint-up(large) {
+        font-size: 2.25rem;
+    }
+}
+
+a {
+    font-size: $font-sm;
+    text-decoration: none;
+    color: $grayishBlue;
+}
+
+button,
+.button {
+    cursor: pointer;
+    padding: 0.875rem 2.1875rem;
+    border: 0px;
+    border-radius: 3.125rem;
+    font-size: $font-sm;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    color: $white;
+    &:hover {
+        opacity: 0.85;
+    }
+}
